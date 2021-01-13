@@ -1,0 +1,16 @@
+# compose file to push the stack for the Zeppelin to K8.
+version: '3.0'
+services:
+  postgresql:
+    image: postgres:9.4
+    build:
+      context: postgresql-docker
+    container_name: postgresql
+    environment:
+      - POSTGRES_USER=zeppelin_user
+      - POSTGRES_PASSWORD=Password123
+      - POSTGRES_DB=zeppelin
+    ports:
+      - "5432:5432"
+    volumes:
+      - /private/tmp:/tmp/postgresql
