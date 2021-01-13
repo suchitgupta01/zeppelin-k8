@@ -1,1 +1,1 @@
-# zeppeling-k8
+# zeppelin-k8
